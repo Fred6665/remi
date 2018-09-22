@@ -1,0 +1,455 @@
+submit_button
+title_input_text
+/* НАЧАЛО описания стилей страницы */
+/*    Flibustier Thin шрифт 28 у галочки 18
+    w:318;
+
+    h:37;*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*начало описания стилей*/
+
+
+
+body
+{
+    background-image:url("/static/foto/bakcground_imege_site.png");
+    background-repeat: no-repeat;
+    background-color:#696969;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.main_page_form
+{
+    margin:auto;
+    margin-top:300px;
+    margin-bottom:30px;
+    text-align: center;
+    background-color:white;
+    width:920px;
+    padding-top:60px;
+    padding-bottom:40px;
+}
+#text_error_warning
+{
+    margin:auto;
+    width:317px;
+    height:15px;
+    color:red;
+    font-family:Play;
+    font-size:14pt;
+    font-weight:600;
+    padding-bottom:10px;
+    display:none;
+}
+.block_line_input
+{
+    padding:10px 0;
+}
+.title_input_text
+{
+    font-family:Play;
+    font-size:24pt;
+}
+.line_input_data_user
+{
+    width:318px;
+    height:37px;
+    border-color:black;
+    border-radius:10px;
+    font-size:20pt;
+    text-align: center;
+}
+.line_input_data_user:focus
+{
+    outline: 0;
+    outline-offset: 0;
+}
+#paragraf_text_info_NP
+{
+    margin:auto;
+    text-align: justify;
+    width:318px;
+    font-weight: bold;
+}
+#submit_display_none
+{
+    display: none;
+}
+#submit_button
+{
+    bottom: 0px; left: 50%; transform: translate(-50%);
+    width:78px;
+    height:78px;
+    background-color: #DD40F0;
+    border-radius:100%;
+    cursor:pointer;
+}
+#submit_button:hover
+{
+    background-color: #FF83FF;
+}
+#block_checkbox_button
+{
+    margin:auto;
+    width:317px;
+    height:30px;
+}
+#error_line_NP
+{
+    display: none;
+    color:red;
+    width:317px;
+    margin:auto;
+    font-family:"Arial Black";
+    font-size:12pt;
+    font-weight:600;
+    text-align:left;
+}
+
+#check_id
+{
+    display:none;
+}
+#text_regulations
+{
+    position:relative;
+    top:2px;
+    right:0;
+}
+
+#check_button
+{
+    position:relative;
+    width:20px;
+    height:20px;
+    background-image:url("/static/foto/checkbox_button.png");
+    background-position:0 0;
+    cursor:pointer;
+    float:left;
+}
+
+/* КОНЕЦ описания стилей страницы */
+
+/* НАЧАЛО описания стилей скрипта НОВОЙ ПОЧТЫ */
+@font-face {
+    font-family: Muemo; 
+    src: url('https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Font/museo_sans_cyrillic_500.ttf') format('truetype'); 
+    font-weight: normal;
+   font-style: normal;
+  }
+
+
+#npw-map-wrapper {
+    display: none;
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 30px 0 rgba(51, 51, 51, 0.55);
+    z-index: 50;
+    background-color: #fff; 
+    overflow: hidden;
+    border-top: none;
+    font-family: Muemo, sans-serif;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+#npw-map {
+    height: 100%;
+    width: 70%;
+    float: left;
+}
+
+#npw-map-sidebar {
+    height: 100%;
+    width: 30%;
+    float: left;
+}
+
+#npw-map-sidebar-header {
+    width: 100%;
+    height: 48px;
+    padding: 10px 13px;
+    box-sizing: border-box;
+    background-color: #DD40F0;
+}
+
+#npw-map-logo {
+    background: url("https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/img/np-logo-white.png") no-repeat;
+    width: 20px;
+    height: 20px;
+    margin: 4px 0 0 9px;
+    float: left;
+}
+#npw-map-back {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin: 4px 0 0 14px;
+    background: url("https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/img/np-back.png") no-repeat;
+    float: left;
+}
+
+#npw-map-back:hover {
+    opacity: 0.7;
+}
+
+#npw-map-close-button {
+    /*background: url("https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/img/map-close-button-sprite.png") 0 0 no-repeat;*/
+    background: url("/static/foto/button_exit_map.png");
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 20;
+}
+
+#npw-map-close-button:hover {
+    background-position: 0 -44px;
+    cursor: pointer;
+}
+
+#npw-map-back:hover {
+    cursor: pointer;
+}
+
+#npw-map-sidebar input,
+#npw-map-sidebar select
+{
+    border-radius: 4px;
+    color: #6c737b;
+    line-height: 17px;
+    font-size: 13px;
+    padding: 0 10px 2px 10px;
+    background: #fbfbfb;
+    height: 38px;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Muemo, sans-serif;
+}
+
+#npw-map-sidebar #npw-map-sidebar-search {
+    height: 28px;
+}
+
+#npw-map-sidebar input {
+    width: 80%;
+    float: right;
+}
+
+#npw-map-sidebar select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#npw-map-sidebar ul {
+    padding: 0 7px;
+    margin: 0;
+    overflow: auto;
+    height: 498px;
+}
+
+#npw-map-sidebar ul li {
+    margin-bottom: 8px;
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid #e7e9eb;
+    border-radius: 2px;
+    padding: 12px;
+    color: #6c737b;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+#npw-map-sidebar ul li:hover {
+    border: solid 1px #b1b9c1;
+    background-color: #fbfbfb;
+}
+
+#npw-map-state-details {
+    display: none;
+    margin: 7px;
+    font-size: 12px;
+    line-height: 20px;
+    border: 1px solid #e7e9eb;
+    border-radius: 2px;
+    padding: 26px 12px 2px 12px;
+    color: #6c737b;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#npw-map-state-details div {
+    margin-bottom: 9px;
+}
+
+#npw-map-state-details a {
+    display: block;
+    font-size: 12px;
+    color: #c1c2c2;
+    text-decoration: underline;
+    padding: 12px 0 5px 0;
+    margin-top: 12px;
+    border-top: 1px solid #e7e9eb;
+}
+
+#npw-map-state-details a:hover {
+    text-decoration: none;
+}
+
+#npw-map-sidebar ul li div {
+    line-height: 16px;
+    margin-bottom: 7px;
+}
+
+.npw-list-city {
+    font-size: 14px;
+}
+.npw-list-warehouse {
+    font-size: 16px;
+    border-bottom: 1px solid #e7e9eb;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+}
+.npw-list-address {
+    font-size: 12px;
+    color: #b1b9c1;
+}
+
+.npw-details-title {
+    font-size: 18px;
+    color: #f63743;
+    border-bottom: 1px solid #e7e9eb;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+#npw-map-sidebar ul li:hover {
+    cursor: pointer;
+}
+
+.npw-display-block {
+    display: block !important;
+}
+
+#npw-map-open-button {
+    width: 200px;
+    height: 38px;
+    outline: none;
+    border-radius: 4px;
+    border: solid 1px #DD40F0;
+    color: #fff;
+    font-size: 11px;
+    font-style: normal;
+    text-align: right;
+    padding-right: 21px;
+    background: url('https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/img/np-logo-white.png') no-repeat #ed1c23 10px;
+    background-size: 20px;
+    font-family: Muemo, sans-serif;
+    /*position: relative;*/
+}
+
+#npw-map-open-button.npw-map-open-button-opened {
+    background-color: #b1b9c1 !important;
+    border: 1px solid transparent;
+}
+
+#npw-map-open-button:hover,
+#npw-map-open-button:focus,
+#npw-map-open-button:active
+{
+
+    cursor: pointer;
+    outline: none;
+    background-color: #FF83FF;
+}
+
+#save-address
+{
+    width: 200px;
+    height: 38px;
+    outline: none;
+    border-radius:0 0 0 10px;
+    border: solid 1px #DD40F0;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    background-color: #DD40F0;
+    margin:auto;
+    position: relative;
+    cursor:pointer;
+    top:30px;
+}
+#save-address:hover
+{
+    background-color: #FF83FF;
+}
+#save-text
+{
+    position:relative;
+    display: block;
+    margin:10px auto;
+    text-align:center;
+}
+#npw-map-open-button
+{
+    width:318px;
+    height:37px;
+    font-weight:400;
+    background-color: #DD40F0;
+    border-radius: 0 0 0 10px;
+
+}
+/* КОНЕЦ описания стилей скрипта НОВОЙ ПОЧТЫ */

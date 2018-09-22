@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>depressed</title>
+	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'file_css/style_form.css'%}">
+	<link rel="stylesheet" href="{% static 'file_css/style_header.css' %}">	
+	<script type="text/javascript" src="{% static 'file_javascript/jquery.js'%}"></script>
+
+</head>
+
+<body>
+	{% include "header_block.html" %}	
+
+
+	<div class="main_page_form">
+		<div id="text_error_warning">Заполните пустые поля!!!</div>
+
+		<form action="/form_buy/treatment/{{product.id}}" id="forms">
+			<div class="block_line_input">
+				<input type="hidden" name="adress_photo" value="{{product.photo_product}}">
+				<span class="title_input_text">имя</span><br>
+				<input type="text" name="name" class="line_input_data_user" id="line_id_name"><br>
+			
+			<div class="block_line_input">
+				<span class="title_input_text">фамилия</span><br>
+				<input type="text" name="surname" class="line_input_data_user" id="line_id_surname"><br>
+			</div>
+			<div class="block_line_input">
+				<span class="title_input_text">отчество</span><br>
+				<input type="text" name="patronymic" class="line_input_data_user" id="line_id_patronymic"><br>	
+			</div>
+			<div class="block_line_input">
+				<span class="title_input_text">номер телефона</span><br>
+				<input type="number" name="number_phone" class="line_input_data_user" id="line_id_number_phone"><br>
+			</div>
+			<div class="block_line_input">
+				<span class="title_input_text">размер футболки</span><br>
+				<input type="text" name="size_body" class="line_input_data_user" id="line_id_size_body"><br>
+			</div>
+			<div class="block_line_input">
+				<span class="title_input_text">коло-во футболок</span><br>
+				<input type="number" name="number_shirts" class="line_input_data_user" id="line_id_number_shirts" value="1">
+			</div>
+
+				<input type="hidden" name="city" id="form_hidden_city">
+				<input type="hidden" name="branch_np" id="form_hidden_adress_NP"><br>
+				<span id="error_line_NP" style="font-family:Play;">Выберете отделение новой почты!!!</span>
+				<div id="np-map"> <button type="button" id="npw-map-open-button">ВЫБРАТЬ ОТДЕЛЕНИЕ НОВОЙ ПОЧТЫ</button> <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPhm7Q29X5ldwjLtA7IMYHU_0xATiWK3A&amp;language=ru"></script> </div>
+				<div id="paragraf_text_info_NP" style='display:none; font-family:Play;'><hr>Адресс: г.<span id="info_city_NP"></span>, <span id="info_adress_NP"></span><hr></div>
+
+			<script  id='map' charset='utf-8' data-lang='ru' apiKey='e0cda5b414ea50c6b865c0a82022067e' data-town='undefined' data-town-name='undefined' data-town-id='undefined' src='https://apimgmtstorelinmtekiynqw.blob.core.windows.net/content/MediaLibrary/Widget/Map/dist/map.min.js'></script><br>
+			<input type="submit" value="" id="submit_display_none">
+			<div>
+<!-- 				<input type="checkbox" name="regulations" id="check_id"> -->
+				<div id="block_checkbox_button">
+<!-- 					<div id="check_button"></div>
+					<span id="text_regulations">Согласны ли вы с правилами покупки?</span> -->
+				</div>
+				<div id="submit_button" style="position:relative;"><img src="{% static 'foto/content_block/icon_buy.png'%}" alt="icon" style="width:50px; top: 50%; left: 50%; transform: translate(-50%,-50%); position: absolute;"></div>
+			</div>
+		</form>
+	</div>
+		<script type="text/javascript" src="{% static 'file_javascript/script_form.js' %}"></script>
+</body>
+</html>

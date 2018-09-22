@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>depressed</title>
+	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+	{% load staticfiles %}
+<link rel="stylesheet" href=" {% static 'file_css/style_preloader.css' %} ">
+{% include "connect_static_file.html" %}
+</head>
+<body>
+<script type="text/javascript" src="{% static 'file_javascript/script.js'%}"></script>
+	<!-- preloader -->
+	<div class="preloader">
+	<img class="image" src="{% static 'foto/fon.png' %}" alt="лол">
+	</div>
+
+	{% include "header_block.html" %}
+
+	
+
+
+	<div class="global">
+		<div class="content_block">
+			<div class="slides_block">
+				<ul class="slides">
+					<li><img src="/static/media/{{slides_con.slide_3}}"></li>
+					<li><img src="/static/media/{{slides_con.slide_1}}"></li>
+					<li><img src="/static/media/{{slides_con.slide_2}}"></li>
+				</ul>
+				<ul class="button_slides"> 
+					<li class="prev"><span class="prev_button"><img  src="{% static '/foto/content_block/slide/cursor_left_button.png' %}" class="size_img"></span></li>
+					<li class="next"><span class="next_button"><img src="{% static '/foto/content_block/slide/cursor_right_button.png' %}" class="size_img" ></span></li>
+				</ul>
+			</div>
+			{% for i in product_con reversed %}
+				<div class="buy_block">
+					<img src="/static/media/{{i.photo_product}}" class="photo_block" id="slide_mayki_button{{i.id}}" style="cursor:pointer;">
+					<div class="discription_block">
+						<div class="discription" style="float:left;">
+							<p> {{i.description_product}} </p><br>
+							<p><span class="color_font">Ткань:</span> {{i.cloth_characteristic}}</p><b/>
+							<p><span class="color_font">Цвета:</span> {{i.color_characteristic}} </p><b/>
+							<p><span class="color_font">Размеры:</span> {{i.size_characteristic}} </p><b/>
+						</div>
+
+						<p class="price">Цена: {{i.Price_product}}грн</p>
+						
+						<a href="form_buy/{{i.id}}/"><div class="button_buy"><img src="{% static 'foto/content_block/icon_buy.png'%}" alt="icon" style="width:50px; top: 50%; left: 50%; transform: translate(-50%,-50%); position: absolute;"></div></a>
+						
+					</div>
+
+
+				</div>
+				<div>
+					<!-- <img id="slide_mayki_button" src="img_pipel.jpg" alt="фото" style="cursor:pointer;"> -->
+
+					<div id="block_photo_mayki{{i.id}}" style="display: none; background-color:rgba(44,44,44,0.7);z-index: 4; top: 0;left: 0; position:fixed; width: 100%; height: 100%;">
+
+						<span id="button_exit_slide{{i.id}}" style="font-size:25pt; right: 30px; top:30px; position: absolute; cursor: pointer; color: rgb(208,208,208);-webkit-text-stroke: 1px rgb(208,208,208);" >x</span>
+
+						<img src="/static/media/{{i.photo_product}}" alt="кря" style="display: none;top:50%; left:50%; position: absolute; transform: translate(-50%,-50%); border-radius: 4px; width: 400px;">
+
+						<img src="/static/media/{{i.photo_product_slide_1}}" alt="кря" style="display: none;top:50%; left:50%; position: absolute; transform: translate(-50%,-50%); border-radius: 4px; width: 400px;">
+
+						<img src="/static/media/{{i.photo_product_slide_2}}" alt="кря" style="display: none;top:50%; left:50%; position: absolute; transform: translate(-50%,-50%); border-radius: 4px; width: 400px;">
+
+
+						<div id="button_slide_mayki" style="bottom: 50%;left: 50%;transform: translate(-50%,-50%); position: absolute; width: 500px; height: 21px;">
+							<div id="back_slide_button_mayki{{i.id}}" class="style_button_slide_mayki" style="float:left;"> <span class="cursor_button_slide_mayki"><</span></div>
+							<div id="next_slide_button_mayki{{i.id}}" class="style_button_slide_mayki" style="float:right;"><span class="cursor_button_slide_mayki">></span></div>
+						</div>
+					</div>
+
+					<script type="text/javascript">
+						function play_slide_mayki(){	
+							var element_id_photo_mayki_slide = document.querySelectorAll("#block_photo_mayki{{i.id}} img");
+							console.log(element_id_photo_mayki_slide[0]);
+
+							$("#slide_mayki_button{{i.id}}").click(function(){
+								if ($("#block_photo_mayki{{i.id}}").css("display") == "none"){
+									$("#block_photo_mayki{{i.id}}").css("display","block");
+									$(element_id_photo_mayki_slide[0]).css("display","block");	
+								}
+							var namber_id_slide_mayki = 0;
+
+							$("#back_slide_button_mayki{{i.id}}").click(function(){
+								if (namber_id_slide_mayki != 0)
+								{
+									$(element_id_photo_mayki_slide[namber_id_slide_mayki]).css("display","none");
+									$(element_id_photo_mayki_slide[namber_id_slide_mayki - 1]).css("display","block");
+									namber_id_slide_mayki -= 1;
+								}
+							});
+							$("#next_slide_button_mayki{{i.id}}").click(function(){
+								if (namber_id_slide_mayki != (element_id_photo_mayki_slide.length - 1))
+								{
+									$(element_id_photo_mayki_slide[namber_id_slide_mayki]).css("display","none");
+									$(element_id_photo_mayki_slide[namber_id_slide_mayki + 1]).css("display","block");
+									namber_id_slide_mayki += 1;
+								}
+							});
+
+							$("#button_exit_slide{{i.id}}").click(function(){
+								$("#block_photo_mayki{{i.id}}").css("display","none");
+								$(element_id_photo_mayki_slide[namber_id_slide_mayki]).css("display","none");
+
+								namber_id_slide_mayki = 0;
+							});
+							
+
+								
+							});
+						}
+						play_slide_mayki();
+					</script>
+				</div>
+
+
+			{% endfor %}
+
+
+		</div>
+	</div>
+
+
+
+</body>
+</html>
