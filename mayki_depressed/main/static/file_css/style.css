@@ -1,0 +1,288 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*начало описания стилей*/
+
+body
+{
+	
+	background-image:url("/static/foto/bakcground_imege_site.png");
+	background-repeat: no-repeat;
+	background-color:#696969;
+}
+
+
+.global
+{
+	margin:auto;
+	margin-top:300px;
+	margin-bottom:30px;
+	width:920px;
+}
+/*начало описания слайдов*/
+.slides_block
+{
+	position: relative;
+	height: 230px;
+	width: 920px;
+	overflow:hidden;
+	
+}
+.slides
+{
+	position: relative;
+}
+.slides li
+{
+	display: table;
+	float:left;
+}
+.slides_block .slides li img
+{
+	position: relative;
+	width:100px;
+	height: 230px;
+}
+.button_slides {
+	width: 920px;
+  	position: absolute;
+
+}
+/*.button_slides  li {
+    display:inline-block;
+    margin:10px;
+    background-color: #e67e22;
+    color:#fff;
+    padding: 5px 20px;
+    border-radius:5px;
+    cursor: pointer;
+}*/
+.button_slides li
+{
+	display: inline-block;
+
+}
+.prev{
+	float: left;
+}
+.prev_button
+{
+	position: absolute;
+	display: block;
+	left:0;
+	height:230px;
+	width:80px;
+	background-color: rgba(0,0,0,0.5);
+	cursor: pointer;
+	
+
+
+}
+.prev_button:hover
+{
+	background-color: rgba(0,0,0,0.7);
+}
+.next_button
+{
+	position: absolute;
+	right: 0px;
+	top: 0;
+	display: block;
+	height:230px;
+	width:80px;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.5);
+
+
+}
+.next_button:hover
+{
+	background-color: rgba(0,0,0,0.7);
+}
+.size_img
+{	
+	display:block;
+	margin:0 auto;
+	margin-top: 100px;
+
+}
+
+/*конец описания слайдов*/
+
+@font-face
+{
+	font-family:Guerrilla;
+	url(static/fonts/GUERRILLA-Normal.ttf);
+}
+@font-face
+{
+	font-family:Kankin;
+	url(static/fonts/Kankin.ttf);
+}
+@font-face
+{
+    font-family:flibustiere;
+    url(static/fonts/flibustiere.ttf);
+}
+.buy_block
+{
+	border-top:1px solid #CECFCA;
+	background-color:#fff;
+	width:920px;
+	height:208px;
+}
+.photo_block
+{
+	display:block;
+	width:200px;
+	margin-right:5px;
+	float:left;
+	border-radius: 5px; 
+}
+
+.discription_block
+{
+	top:3px;
+	width:715px;
+	height:205px;
+	position:relative;
+	float:right;
+}
+
+.discription p 
+{
+	font-family: 'Play', sans-serif;
+	font-size: 13pt;
+	font-weight:600; 
+}
+.color_font
+{
+	color:#A609BE;
+}
+
+.price
+{
+	color:#DD40F0;
+	text-shadow: black 1px 1px 0, black -1px -1px 0, black -1px 1px 0, black 1px -1px 0;
+	font-family: 'Play', sans-serif;
+	font-size: 26pt;
+	display:block;
+	bottom:27px;
+	position:absolute;
+}
+.button_buy_block
+{
+	width:100px;
+	height: 40px;
+}
+		/*.button_buy
+		{
+			position:absolute;
+			display:block;
+			background-image: url(/static/foto/content_block/button_buy_s.png); Изменить адрес 
+			background-position:0 0;
+			width:200px;
+			height:48px;
+			right:15px;
+			bottom:17px;
+		}
+		.button_buy:hover
+		{
+			background-position:200px 0;
+		}*/
+.button_buy
+{
+	height: 100%;
+	width:60px;
+	background-color: #DD40F0;
+	position: absolute;
+	right: 0px;
+	border-radius: 0 0 0 10px ;
+}
+.button_buy:hover
+{
+	background-color: #FF83FF;
+}
+
+
+.style_button_slide_mayki
+{
+	position: relative;
+	width:30px;
+	height: 30px;
+	border-radius: 100%;
+	opacity: 0.8;
+	cursor:pointer;
+	background-color:rgb(208,208,208);
+}
+.style_button_slide_mayki:hover
+{
+	background-color:#DA3BF1;
+	opacity: 1;
+}
+
+.cursor_button_slide_mayki
+{
+	font-size:14pt ;
+	font-weight: 600;
+	color: rgb(95,95,95);
+	-webkit-text-stroke: 1px rgb(95,95,95);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+}
+.style_button_slide_mayki:hover .cursor_button_slide_mayki
+{
+	color: #fff;
+	-webkit-text-stroke: #fff;
+}
+.buy_block
+{
+	border-radius: 5px;
+}

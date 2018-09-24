@@ -1,0 +1,129 @@
+#block_header
+{
+	position:fixed;
+	z-index:1;
+	background-color: #fff;
+	width:100%;
+	height:60px;
+	top:0;
+
+}
+#block_number_phone
+{
+	float:left;
+	height:40px;
+	width:300px;
+	left:100px;
+	top:10px;
+	position:relative;
+}
+#icon_phone
+{
+	float:left;
+	top:3px;
+	position:absolute;
+	cursor:pointer;
+}
+#icon_phone:hover
+{
+	border-radius: 2px;
+	background-color:#EDEDED;
+}
+#number_phone
+{
+	display: none;
+	right:5px;
+	top:-50px;
+	font-size:23px;
+	position:absolute;
+}
+
+
+#icon_logo
+{
+	top:5px;
+	cursor:pointer;
+	position:relative;
+
+}
+#block_button_SN
+{
+	top:15px;
+	right:100px;
+	width:162px;
+	height:30px;
+	display:inline-block;
+	position:relative;
+	float:right;
+}
+.size_block
+{
+	width:30px;
+	height:30px;
+	float:left;
+	cursor:pointer;
+	background-image:url("/static/foto/button_social_network.png");
+}
+#instagram_block
+{
+
+	background-position:0 0;
+	border-radius:5px;
+	margin-right:3px;
+}
+#instagram_block:hover
+{
+
+	background-position: 0 30px;
+}
+
+
+#vk_block
+{
+
+	background-position:-30px 0;
+	border-radius:5px;
+	margin-right:3px;
+}
+#vk_block:hover
+{
+	background-position: -30px 30px;
+
+}
+
+#facebock_block
+{
+	background-position:-60px 0;
+	border-radius:5px;
+	margin-right:3px;
+}
+#facebock_block:hover
+{
+	background-position: -60px 30px;
+
+}
+
+#telegram_block
+{
+
+	background-position:-90px 0;
+	border-radius:5px;
+	margin-right:3px;
+}
+#telegram_block:hover
+{
+	background-position: -90px 30px;
+
+}
+
+#twitter_block
+{
+
+	background-position:-120px 0;
+	border-radius:5px;
+}
+#twitter_block:hover
+{
+	background-position: -120px 30px;
+
+}

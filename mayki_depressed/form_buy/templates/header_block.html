@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<div id="block_header">
+	<div id="block_number_phone">
+		<img src="{% static 'foto/button_phone_number.png' %}" id="icon_phone">
+		<span id="number_phone">+(380) 951 85-34-05</span>
+	</div>
+	
+	<a href="http://127.0.0.1:8000"><img id="icon_logo" src="{% static 'foto/button_mini_logo.png' %}"></a>
+
+	<div id="block_button_SN">
+		<a href="https://www.instagram.com/mayki.depressed/" target="_blank"> <div class="size_block" id="instagram_block"></div></a>
+		<a href="https://vk.com/mayki_depressed" target="_blank"> <div class="size_block" id="vk_block"></div></a>
+		<a href="https://www.facebook.com/mayki.depressed" target="_blank"> <div class="size_block" id="facebock_block"></div></a>
+		<a href="https://t.me/mayki_depressed" target="_blank"> <div class="size_block" id="telegram_block"></div></a>
+		<a href="#" target="_blank"> <div class="size_block" id="twitter_block"></div></a>
+	</div>
+
+</div>
+<script type="text/javascript">
+	$("#icon_phone").click(function(){
+		if ($("#number_phone").css("display") == "none")
+		{
+			$("#number_phone").css("display", "block");
+			$("#number_phone").animate({"top":"8.5px"},200).animate({"top":"3px"},100).animate({"top":"8.5px"},100);
+		}
+		else
+		{				
+			$("#number_phone").animate({"top":"-50px"},200,function(){
+				$("#number_phone").css("display", "none");
+			});
+
+		}
+	});		
+	function size_window()
+	{
+		var size_mini_logo = ($(window).width() / 2 - 325) + "px";
+		$("#icon_logo").css("left",size_mini_logo);
+	}
+	size_window();
+	$(window).resize(function(){
+		size_window();
+	});
+</script>
